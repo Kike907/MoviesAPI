@@ -169,3 +169,5 @@ C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\obj\Debug\netcoreapp3.1\MoviesAPI.d
 C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\obj\Debug\netcoreapp3.1\MoviesAPI.pdb
 C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\obj\Debug\netcoreapp3.1\MoviesAPI.genruntimeconfig.cache
 C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\MoviesAPI.styles.css
+C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\obj\Debug\netcoreapp3.1\MoviesAPI.xml
+C:\Users\ABC\Documents\C#\Tutorial\MoviesAPI\bin\Debug\netcoreapp3.1\MoviesAPI.xml
