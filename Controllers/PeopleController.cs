@@ -84,27 +84,27 @@ namespace MoviesAPI.Controllers
             return NoContent();
         }
 
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<PersonPatchDTO> patchDocument)
-        {
-            if (patchDocument == null)
-                return NotFound();
-            var entityFromDB = await _context.People.FirstOrDefaultAsync(p => p.Id == id);
+        // [HttpPatch("{id}")]
+        // public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<PersonPatchDTO> patchDocument)
+        // {
+        //     if (patchDocument == null)
+        //         return NotFound();
+        //     var entityFromDB = await _context.People.FirstOrDefaultAsync(p => p.Id == id);
 
-            if (entityFromDB == null)
-                return NotFound();
+        //     if (entityFromDB == null)
+        //         return NotFound();
 
-            var entityDTO = _mapper.Map<PersonPatchDTO>(entityFromDB);
-            patchDocument.ApplyTo(entityDTO, ModelState);
+        //     var entityDTO = _mapper.Map<PersonPatchDTO>(entityFromDB);
+        //     patchDocument.ApplyTo(entityDTO, ModelState);
 
-            var isValid = TryValidateModel(entityDTO);
-            if (!isValid)
-                return BadRequest(ModelState);
+        //     var isValid = TryValidateModel(entityDTO);
+        //     if (!isValid)
+        //         return BadRequest(ModelState);
             
-            _mapper.Map(entityDTO, entityFromDB);
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
+        //     _mapper.Map(entityDTO, entityFromDB);
+        //     await _context.SaveChangesAsync();
+        //     return NoContent();
+        // }
 
 
         [HttpDelete("{id}")]
