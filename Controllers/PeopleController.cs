@@ -67,22 +67,22 @@ namespace MoviesAPI.Controllers
             return new CreatedAtRouteResult("getPerson", new {person.Id}, personDTO); 
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromForm] PersonCreationDTO personCreation)
-        {
-            var personDB = await _context.People.FirstOrDefaultAsync(x => x.Id == id);
-            if (personDB == null)
-                return NotFound();
+        // [HttpPut("{id}")]
+        // public async Task<ActionResult> Put(int id, [FromForm] PersonCreationDTO personCreation)
+        // {
+        //     var personDB = await _context.People.FirstOrDefaultAsync(x => x.Id == id);
+        //     if (personDB == null)
+        //         return NotFound();
             
-            personDB = _mapper.Map(personCreation, personDB);
-            if (personCreation.Picture != null)
-            {
-                personDB.Picture = 
-                    await _fileStorageService.EditFile(personDB.Picture, personCreation.Picture);
-            }
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
+        //     personDB = _mapper.Map(personCreation, personDB);
+        //     if (personCreation.Picture != null)
+        //     {
+        //         personDB.Picture = 
+        //             await _fileStorageService.EditFile(personDB.Picture, personCreation.Picture);
+        //     }
+        //     await _context.SaveChangesAsync();
+        //     return NoContent();
+        // }
 
         // [HttpPatch("{id}")]
         // public async Task<IActionResult> Patch(int id, [FromBody] JsonPatchDocument<PersonPatchDTO> patchDocument)
